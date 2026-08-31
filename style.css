@@ -1,0 +1,233 @@
+/* ==========================================================================
+   Originalboy2 — shared site styles (index.html, socials.html, …)
+   ========================================================================== */
+
+:root{
+  /* base */
+  --bg:            #0d0d0d;
+  --surface:       #141414;
+  --surface-hover: #1a1a1a;
+  --line:          #262626;
+  --line-strong:   #333333;
+
+  /* text */
+  --text:          #f8f8f2;   /* monokai foreground */
+  --text-dim:      #a9a9a2;
+  --text-muted:    #75715e;   /* monokai comment */
+
+  /* brand + monokai accents */
+  --brand:         #8800ff;
+  --green:         #a6e22e;
+  --cyan:          #66d9ef;
+  --orange:        #fd971f;
+  --pink:          #f92672;
+  --purple:        #ae81ff;
+
+  --mono: "Courier New", Courier, monospace;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--mono);
+  font-size:16px;
+  line-height:1.6;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding:3rem 1.5rem;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{
+  width:100%;
+  max-width:620px;
+}
+
+/* ---- header (name + pfp, same on every page) ---- */
+
+header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:1rem;
+}
+
+.pfp{
+  width:clamp(2.75rem, 8vw, 3.5rem);
+  height:clamp(2.75rem, 8vw, 3.5rem);
+  flex-shrink:0;
+  border-radius:50%;
+  object-fit:cover;
+  border:1px solid var(--line-strong);
+}
+
+h1{
+  margin:0;
+  font-size:clamp(2.4rem, 9vw, 3.75rem);
+  font-weight:700;
+  letter-spacing:-0.01em;
+  line-height:1.1;
+  color:var(--brand);
+}
+
+/* ---- about (index) ---- */
+
+.about{
+  margin:1.1rem 0 0.75rem;
+  padding:1.25rem 1.4rem;
+  background:var(--surface);
+  color:var(--text-dim);
+  font-size:0.95rem;
+  line-height:1.75;
+}
+
+.about p{ margin:0; }
+.about p + p{ margin-top:0.85rem; }
+
+.comment{ color:var(--text-muted); }
+
+/* ---- nav buttons (index) ---- */
+
+nav{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:0.75rem;
+}
+
+.btn{
+  display:block;
+  padding:1rem 1.1rem;
+  background:var(--surface);
+  color:var(--text);
+  text-decoration:none;
+  font-size:0.95rem;
+  font-weight:400;
+  letter-spacing:0.01em;
+}
+
+.btn .sigil{
+  color:var(--accent);
+  margin-right:0.55rem;
+  font-weight:400;
+}
+
+.btn:hover,
+.btn:focus-visible{
+  background:var(--surface-hover);
+  color:var(--accent);
+  outline:none;
+}
+
+.btn:focus-visible{
+  box-shadow:0 0 0 2px var(--bg), 0 0 0 4px var(--brand);
+}
+
+.btn-projects{ --accent:var(--green); }
+.btn-blog{     --accent:var(--cyan); }
+.btn-socials{  --accent:var(--orange); }
+
+/* ---- back button (socials) ---- */
+
+.back-btn{
+  display:inline-block;
+  margin-top:1.1rem;
+  padding:1rem 1.1rem;
+  background:var(--surface);
+  color:var(--brand);
+  text-decoration:none;
+  font-family:inherit;
+  font-size:0.95rem;
+  font-weight:400;
+}
+
+.back-btn .sigil{
+  margin-right:0.55rem;
+}
+
+.back-btn:hover,
+.back-btn:focus-visible{
+  background:var(--surface-hover);
+  outline:none;
+}
+
+/* ---- social rows (socials) ---- */
+
+.socials-list{
+  display:flex;
+  flex-direction:column;
+  gap:0.75rem;
+  margin-top:0.75rem;
+}
+
+.social-row{
+  display:flex;
+  align-items:center;
+  gap:0.9rem;
+  padding:1rem 1.1rem;
+  background:var(--surface);
+  color:inherit;
+  text-decoration:none;
+  font-size:0.95rem;
+}
+
+a.social-row:hover,
+a.social-row:focus-visible{
+  background:var(--surface-hover);
+  outline:none;
+}
+
+.social-row .icon{
+  width:22px;
+  height:22px;
+  flex-shrink:0;
+  fill:var(--brand);
+}
+
+.social-row .label{
+  font-weight:400;
+  color:var(--text);
+}
+
+.social-row .handle{
+  margin-left:auto;
+  font-size:0.8rem;
+  color:var(--orange);
+}
+
+/* ---- footer (every page) ---- */
+
+.footer{
+  position:fixed;
+  bottom:1.25rem;
+  font-size:0.8rem;
+  color:var(--text-muted);
+}
+
+.footer p{ margin:0; }
+.footer p + p{ margin-top:0.3rem; }
+
+.footer a{ color:var(--purple); text-decoration:none; }
+.footer a:hover{ text-decoration:underline; }
+
+.footer-left{ left:1.5rem; }
+
+.footer-right{ right:1.5rem; text-align:right; }
+
+/* ---- small screens ---- */
+
+@media (max-width:520px){
+  body{ padding:2.5rem 1.25rem; }
+  nav{ grid-template-columns:1fr; }
+  .social-row{ flex-wrap:wrap; }
+  .social-row .handle{ margin-left:2.9rem; }
+  .footer-left{ left:1.25rem; bottom:1rem; }
+  .footer-right{ right:1.25rem; bottom:1rem; }
+}
