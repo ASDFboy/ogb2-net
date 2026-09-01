@@ -161,8 +161,8 @@ nav{
 /* ---- social rows (socials) ---- */
 
 .socials-list{
-  display:flex;
-  flex-direction:column;
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
   gap:0.75rem;
   margin-top:0.75rem;
 }
@@ -205,8 +205,8 @@ a.social-row:focus-visible{
 /* ---- project cards (projects) ---- */
 
 .projects-list{
-  display:flex;
-  flex-direction:column;
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
   gap:0.75rem;
   margin-top:0.75rem;
 }
@@ -227,8 +227,8 @@ a.project-card:focus-visible{
 
 .project-cover{
   width:100%;
-  height:280px;
-  object-fit:cover;
+  aspect-ratio:var(--cover-ratio, 4 / 3);
+  object-fit:contain;
   display:block;
 }
 
@@ -257,8 +257,121 @@ a.project-card:focus-visible{
 }
 
 /* per-project accent, taken from that project's own itch.io page theme */
-.project-gachastuck{ --accent:#60F26A; }
-.project-genesis{    --accent:#FF4040; }      /* sampled from the Genesis cover art */
+.project-gachastuck{ --accent:#60F26A; --cover-ratio:650 / 500; }
+.project-genesis{    --accent:#FF4040;  --cover-ratio:630 / 500; }      /* sampled from the Genesis cover art */
+
+/* ---- blog list (blog) ---- */
+
+.blog-list{
+  display:flex;
+  flex-direction:column;
+  gap:0.75rem;
+  margin-top:0.75rem;
+}
+
+.blog-row{
+  display:block;
+  padding:1rem 1.1rem;
+  background:var(--surface);
+  color:inherit;
+  text-decoration:none;
+}
+
+.blog-row:hover,
+.blog-row:focus-visible{
+  background:var(--surface-hover);
+  outline:none;
+}
+
+.blog-row-head{
+  display:flex;
+  align-items:center;
+  gap:0.9rem;
+}
+
+.blog-title{
+  font-size:0.95rem;
+  font-weight:400;
+  color:var(--text);
+}
+
+.blog-title .sigil{
+  color:var(--cyan);
+  margin-right:0.55rem;
+  font-weight:400;
+}
+
+.blog-date{
+  margin-left:auto;
+  font-size:0.8rem;
+  color:var(--cyan);
+  white-space:nowrap;
+}
+
+.blog-summary{
+  margin:0.5rem 0 0;
+  font-size:0.8rem;
+  color:var(--text-dim);
+  line-height:1.6;
+}
+
+.blog-empty{
+  padding:1rem 1.1rem;
+  background:var(--surface);
+  color:var(--text-muted);
+  font-size:0.9rem;
+}
+
+/* ---- individual post page ---- */
+
+.post{
+  margin-top:1.1rem;
+}
+
+.post-date{
+  margin:0;
+  font-size:0.8rem;
+  color:var(--cyan);
+}
+
+.post-heading{
+  margin:0.4rem 0 0;
+  font-size:1.4rem;
+  font-weight:700;
+  color:var(--text);
+}
+
+.post-body{
+  margin-top:0.75rem;
+  padding:1.25rem 1.4rem;
+  background:var(--surface);
+  color:var(--text-dim);
+  font-size:0.95rem;
+  line-height:1.75;
+}
+
+.post-body p{ margin:0; }
+.post-body p + p{ margin-top:0.85rem; }
+
+.post-body h2,
+.post-body h3{
+  margin:1.1rem 0 0.5rem;
+  font-weight:400;
+  color:var(--text);
+}
+
+.post-body h2{ font-size:1.05rem; }
+.post-body h3{ font-size:0.95rem; }
+
+.post-body strong{ color:var(--text); font-weight:700; }
+.post-body em{ font-style:italic; }
+.post-body code{
+  font-family:inherit;
+  background:var(--bg);
+  padding:0.1rem 0.35rem;
+  color:var(--green);
+}
+.post-body a{ color:var(--purple); text-decoration:underline; }
 
 /* ---- footer (every page) ---- */
 
@@ -277,16 +390,16 @@ a.project-card:focus-visible{
 
 .footer-left{ left:1.5rem; }
 
-.footer-right{ right:1.5rem; text-align:right; }
-
 /* ---- small screens ---- */
 
 @media (max-width:520px){
   body{ padding:2.5rem 1.25rem; }
   nav{ grid-template-columns:1fr; }
-  .project-cover{ height:200px; }
+  .socials-list{ grid-template-columns:1fr; }
+  .projects-list{ grid-template-columns:1fr; }
+  .blog-date{ margin-left:0; }
+  .blog-row-head{ flex-wrap:wrap; }
   .social-row{ flex-wrap:wrap; }
   .social-row .handle{ margin-left:2.9rem; }
   .footer-left{ left:1.25rem; bottom:1rem; }
-  .footer-right{ right:1.25rem; bottom:1rem; }
 }
