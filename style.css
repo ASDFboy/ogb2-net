@@ -33,7 +33,7 @@ html{ -webkit-text-size-adjust:100%; }
 body{
   margin:0;
   min-height:100vh;
-  background:var(--bg);
+  background-color:var(--bg);
   color:var(--text);
   font-family:var(--mono);
   font-size:16px;
@@ -45,6 +45,21 @@ body{
   padding:3rem 1.5rem;
   -webkit-font-smoothing:antialiased;
 }
+
+.page-bg{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background-image:url("bg-clouds.png");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
+  pointer-events:none;
+}
+
+.page-bg-blog{     background-image:url("blog-bg.png"); }
+.page-bg-projects{ background-image:url("projects-bg.png"); }
+.page-bg-socials{  background-image:url("socials-bg.png"); }
 
 .wrap{
   width:100%;

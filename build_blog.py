@@ -108,6 +108,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 </head>
 
 <body>
+<div class="page-bg page-bg-blog" aria-hidden="true"></div>
 <div class="wrap">
 
   <header>
@@ -148,6 +149,7 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 </head>
 
 <body>
+<div class="page-bg page-bg-blog" aria-hidden="true"></div>
 <div class="wrap">
 
   <header>
