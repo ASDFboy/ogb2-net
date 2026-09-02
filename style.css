@@ -50,16 +50,16 @@ body{
   position:fixed;
   inset:0;
   z-index:-1;
-  background-image:url("bg-clouds.png");
+  background-image:url("images/bgs/bg-clouds.png");
   background-repeat:no-repeat;
   background-position:center;
   background-size:cover;
   pointer-events:none;
 }
 
-.page-bg-blog{     background-image:url("blog-bg.png"); }
-.page-bg-projects{ background-image:url("projects-bg.png"); }
-.page-bg-socials{  background-image:url("socials-bg.png"); }
+.page-bg-blog{     background-image:url("images/bgs/blog-bg.png"); }
+.page-bg-projects{ background-image:url("images/bgs/projects-bg.png"); }
+.page-bg-socials{  background-image:url("images/bgs/socials-bg.png"); }
 
 .wrap{
   width:100%;
@@ -197,12 +197,13 @@ nav{
 }
 
 .btn::before,
-.back-btn::before{
+.back-btn::before,
+.project-play::before{
   content:"";
   position:absolute;
   inset:0;
   z-index:-1;
-  background-image:url("purple-effect.gif");
+  background-image:url("images/purple-effect.gif");
   background-repeat:no-repeat;
   background-size:280%;
   opacity:0;
@@ -213,7 +214,9 @@ nav{
 .btn:hover::before,
 .btn:focus-visible::before,
 .back-btn:hover::before,
-.back-btn:focus-visible::before{
+.back-btn:focus-visible::before,
+.project-play:hover::before,
+.project-play:focus-visible::before{
   opacity:0.25;
 }
 
@@ -221,6 +224,7 @@ nav{
 .btn-blog::before{     background-position:100% 30%; }
 .btn-socials::before{  background-position:20% 100%; }
 .back-btn::before{     background-position:100% 100%; }
+.project-play::before{ background-position:0% 100%; }
 
 /* ---- social rows (socials) ---- */
 
@@ -271,8 +275,14 @@ a.social-row:focus-visible{
 .projects-list{
   display:grid;
   grid-template-columns:repeat(2, 1fr);
+  align-items:start;
   gap:0.75rem;
   margin-top:0.75rem;
+}
+
+.project-card-group{
+  display:flex;
+  flex-direction:column;
 }
 
 .project-card{
@@ -286,6 +296,40 @@ a.social-row:focus-visible{
 a.project-card:hover,
 a.project-card:focus-visible{
   background:var(--surface-hover);
+  outline:none;
+}
+
+.project-cover-wrap{
+  position:relative;
+}
+
+.project-play{
+  position:absolute;
+  z-index:0;
+  left:50%;
+  bottom:0.6rem;
+  transform:translateX(-50%);
+  overflow:hidden;
+  padding:0.3rem 0.7rem;
+  background:var(--surface);
+  border:1px solid var(--accent, var(--brand));
+  color:var(--accent, var(--brand));
+  text-decoration:none;
+  white-space:nowrap;
+  font-size:0.75rem;
+  font-weight:400;
+}
+
+.project-play .sigil{
+  margin-right:0.4rem;
+  font-weight:400;
+}
+
+.project-play:hover,
+.project-play:focus-visible{
+  background:var(--surface-hover);
+  border-color:var(--text);
+  color:var(--text);
   outline:none;
 }
 
