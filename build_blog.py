@@ -1,32 +1,5 @@
 #!/usr/bin/env python3
-"""
-build_blog.py — generates blog post pages and the blog index from markdown
-source files in posts/.
-
-Usage:
-    python3 build_blog.py
-
-Add a new post:
-    1. Create a new file in posts/, e.g. posts/my-new-post.md, formatted as:
-
-        ---
-        title: My New Post
-        date: 2026-09-05
-        summary: One line describing the post, shown on the blog index row.
-        ---
-
-        Body goes here, written in a small subset of markdown:
-        blank lines separate paragraphs, # / ## make headings,
-        **bold**, *italic*, `code`, and [link text](https://example.com)
-        all work.
-
-    2. Run: python3 build_blog.py
-    3. It (re)writes blog.html and every blog-<slug>.html page.
-    4. Commit and push as usual.
-
-Re-running is always safe — every post page and blog.html are fully
-regenerated from posts/ each time, so nothing drifts out of sync.
-"""
+"""Generates blog post pages and the blog index from markdown files in posts/."""
 
 import html
 import re
@@ -41,10 +14,7 @@ PFP_MARKER_FILE = ROOT / "index.html"
 
 
 def get_pfp_img_tag():
-    """Pull the <img class="pfp" ...> tag (with its embedded image data)
-    straight out of index.html, so every generated page uses the exact
-    same picture without duplicating hundreds of KB of base64 in this
-    script."""
+    """Return the <img class="pfp"> tag from index.html."""
     text = PFP_MARKER_FILE.read_text(encoding="utf-8")
     m = re.search(r'<img class="pfp".*?>', text, re.S)
     if not m:
@@ -103,9 +73,6 @@ INLINE_PATTERNS = [
 
 def render_inline(text):
     text = html.escape(text, quote=False)
-    # html.escape turns quotes into entities too aggressively for our tags;
-    # re-allow the ones we just inserted isn't needed since we apply escape
-    # BEFORE adding markup below.
     for pattern, repl in INLINE_PATTERNS:
         text = pattern.sub(repl, text)
     return text
@@ -165,7 +132,6 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   <p>&copy; zuki.awu 2026 (pfp)</p>
 </footer>
 
-<script src="script.js" defer></script>
 </body>
 </html>
 """
@@ -202,7 +168,6 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
   <p>&copy; zuki.awu 2026 (pfp)</p>
 </footer>
 
-<script src="script.js" defer></script>
 </body>
 </html>
 """
