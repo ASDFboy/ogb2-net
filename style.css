@@ -1,21 +1,14 @@
-/* ==========================================================================
-   Originalboy2 — shared site styles (index.html, socials.html, …)
-   ========================================================================== */
-
 :root{
-  /* base */
   --bg:            #0d0d0d;
   --surface:       #141414;
   --surface-hover: #1a1a1a;
   --line:          #262626;
   --line-strong:   #333333;
 
-  /* text */
-  --text:          #f8f8f2;   /* monokai foreground */
+  --text:          #f8f8f2;
   --text-dim:      #a9a9a2;
-  --text-muted:    #75715e;   /* monokai comment */
+  --text-muted:    #75715e;
 
-  /* brand + monokai accents */
   --brand:         #8800ff;
   --green:         #a6e22e;
   --cyan:          #66d9ef;
@@ -66,8 +59,6 @@ body{
   max-width:620px;
 }
 
-/* ---- header (name + pfp, same on every page) ---- */
-
 header{
   display:flex;
   align-items:center;
@@ -93,8 +84,6 @@ h1{
   color:var(--brand);
 }
 
-/* ---- about (index) ---- */
-
 .about{
   margin:1.1rem 0 0.75rem;
   padding:1.25rem 1.4rem;
@@ -111,8 +100,6 @@ h1{
 
 .comment{ color:var(--text-muted); }
 
-/* ---- 404 ---- */
-
 .error-code{
   margin:1.1rem 0 0;
   font-size:clamp(5.25rem, 24vw, 9rem);
@@ -125,7 +112,32 @@ h1{
 .back-btn + .error-code{ margin-top:0.75rem; }
 .error-code + .about{ margin-top:0.75rem; }
 
-/* ---- nav buttons (index) ---- */
+.mc-server{
+  margin:0.75rem 0 0;
+  padding:1.25rem 1.4rem;
+  background:var(--surface);
+  text-align:center;
+}
+
+.mc-label{
+  margin:0;
+  font-size:0.95rem;
+  color:var(--text-dim);
+}
+
+.mc-address{
+  margin:0.5rem 0 0;
+  font-size:clamp(1.75rem, 8vw, 3rem);
+  font-weight:400;
+  line-height:1.1;
+  color:var(--brand);
+}
+
+.mc-detail{
+  margin:0.5rem 0 0;
+  font-size:0.95rem;
+  color:var(--text-dim);
+}
 
 nav{
   display:grid;
@@ -166,8 +178,6 @@ nav{
 .btn-projects{ --accent:var(--green); }
 .btn-blog{     --accent:var(--cyan); }
 .btn-socials{  --accent:var(--orange); }
-
-/* ---- back button (socials) ---- */
 
 .back-btn{
   position:relative;
@@ -226,8 +236,6 @@ nav{
 .back-btn::before{     background-position:100% 100%; }
 .project-play::before{ background-position:0% 100%; }
 
-/* ---- social rows (socials) ---- */
-
 .socials-list{
   display:grid;
   grid-template-columns:repeat(2, 1fr);
@@ -269,8 +277,6 @@ a.social-row:focus-visible{
   font-size:0.8rem;
   color:var(--orange);
 }
-
-/* ---- project cards (projects) ---- */
 
 .projects-list{
   display:grid;
@@ -367,8 +373,6 @@ a.project-card:focus-visible{
 .project-gachastuck{ --accent:#60F26A; --cover-ratio:650 / 500; }
 .project-genesis{    --accent:#FF4040;  --cover-ratio:630 / 485; }
 
-/* ---- blog list (blog) ---- */
-
 .blog-list{
   display:flex;
   flex-direction:column;
@@ -430,8 +434,6 @@ a.project-card:focus-visible{
   font-size:0.9rem;
 }
 
-/* ---- individual post page ---- */
-
 .post{
   margin-top:1.1rem;
 }
@@ -481,8 +483,6 @@ a.project-card:focus-visible{
 }
 .post-body a{ color:var(--purple); text-decoration:underline; }
 
-/* ---- footer (every page) ---- */
-
 .footer{
   position:fixed;
   bottom:1.25rem;
@@ -497,8 +497,6 @@ a.project-card:focus-visible{
 .footer a:hover{ text-decoration:underline; }
 
 .footer-left{ left:1.5rem; }
-
-/* ---- power button (every page) ---- */
 
 .power-btn{
   position:fixed;
@@ -521,8 +519,6 @@ a.project-card:focus-visible{
   outline:none;
 }
 
-/* ---- CRT power-off ---- */
-
 body.crt-off{
   animation:crt-off 0.48s ease-in forwards;
   overflow:hidden;
@@ -535,8 +531,6 @@ body.crt-off{
   55%{  transform:scaleY(0.02);           filter:brightness(3); }
   100%{ transform:scaleY(0.02) scaleX(0); filter:brightness(1); opacity:0; }
 }
-
-/* ---- small screens ---- */
 
 @media (max-width:520px){
   body{ padding:2.5rem 1.25rem; }
