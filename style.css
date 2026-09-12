@@ -208,14 +208,15 @@ nav{
 
 .btn::before,
 .back-btn::before,
-.project-play::before{
+.project-play::before,
+.blog-row::before{
   content:"";
   position:absolute;
   inset:0;
   z-index:-1;
   background-image:url("images/purple-effect.gif");
   background-repeat:no-repeat;
-  background-size:280%;
+  background-size:280% auto;
   opacity:0;
   transition:opacity 0.2s ease;
   pointer-events:none;
@@ -226,7 +227,9 @@ nav{
 .back-btn:hover::before,
 .back-btn:focus-visible::before,
 .project-play:hover::before,
-.project-play:focus-visible::before{
+.project-play:focus-visible::before,
+.blog-row:hover::before,
+.blog-row:focus-visible::before{
   opacity:0.25;
 }
 
@@ -235,6 +238,7 @@ nav{
 .btn-socials::before{  background-position:20% 100%; }
 .back-btn::before{     background-position:100% 100%; }
 .project-play::before{ background-position:0% 100%; }
+.blog-row::before{     background-position:50% 60%; background-size:cover; }
 
 .socials-list{
   display:grid;
@@ -381,7 +385,10 @@ a.project-card:focus-visible{
 }
 
 .blog-row{
+  position:relative;
+  z-index:0;
   display:block;
+  overflow:hidden;
   padding:1rem 1.1rem;
   background:var(--surface);
   color:inherit;
@@ -392,6 +399,17 @@ a.project-card:focus-visible{
 .blog-row:focus-visible{
   background:var(--surface-hover);
   outline:none;
+}
+
+.blog-row:hover .blog-title,
+.blog-row:hover .blog-title .sigil,
+.blog-row:hover .blog-date,
+.blog-row:hover .blog-summary,
+.blog-row:focus-visible .blog-title,
+.blog-row:focus-visible .blog-title .sigil,
+.blog-row:focus-visible .blog-date,
+.blog-row:focus-visible .blog-summary{
+  color:#fff;
 }
 
 .blog-row-head{
