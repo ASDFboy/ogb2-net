@@ -3,7 +3,7 @@
 Working notes for Claude on this repo. Every comment that isn't something a
 plain, no-frills dev would leave in the code lives here instead — usage
 instructions, rationale, gotchas — so the code files themselves stay short
-and easy to read. Also tracks standing instructions from Jeffrey that should
+and easy to read. Also tracks standing instructions from the owner that should
 keep applying to future changes, not just the request they came from.
 
 ## Standing rules
@@ -20,7 +20,7 @@ keep applying to future changes, not just the request they came from.
 - No images embedded as base64/data URIs in HTML. Every image is its own
   file in the repo root, referenced with a normal relative `src`/`href`.
 - Every page shares the same header (pfp + "Originalboy2" h1) and footer
-  (just the "Originalboy2 & Claude" copyright line — no zuki.awu/pfp credit line
+  (just the Originalboy2 copyright line — no Claude copyright line, owner's rule (Oct 9) — no zuki.awu/pfp credit line
   anywhere anymore, see "Footer copyright cleanup" below). Sub-pages
   (socials/projects/blog/404) follow the same layout order: header, then
   back-btn ("< index"), then the page's content box, with a 0.75rem gap
