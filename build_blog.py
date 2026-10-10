@@ -143,7 +143,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 </div>
 
 <footer class="footer footer-left">
-  <p>&copy; Originalboy2 2026 (website)</p>
+  <p>&copy; Originalboy2 &amp; Claude 2026 (website)</p>
 </footer>
 
 </body>
@@ -183,7 +183,7 @@ VIDEO_PAGE_TEMPLATE = """<!DOCTYPE html>
 </div>
 
 <footer class="footer footer-left">
-  <p>&copy; Originalboy2 2026 (website)</p>
+  <p>&copy; Originalboy2 &amp; Claude 2026 (website)</p>
 </footer>
 
 </body>
@@ -219,7 +219,7 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 </div>
 
 <footer class="footer footer-left">
-  <p>&copy; Originalboy2 2026 (website)</p>
+  <p>&copy; Originalboy2 &amp; Claude 2026 (website)</p>
 </footer>
 
 </body>

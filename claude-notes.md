@@ -20,7 +20,7 @@ keep applying to future changes, not just the request they came from.
 - No images embedded as base64/data URIs in HTML. Every image is its own
   file in the repo root, referenced with a normal relative `src`/`href`.
 - Every page shares the same header (pfp + "Originalboy2" h1) and footer
-  (just the Originalboy2 copyright line — no zuki.awu/pfp credit line
+  (just the "Originalboy2 & Claude" copyright line — no zuki.awu/pfp credit line
   anywhere anymore, see "Footer copyright cleanup" below). Sub-pages
   (socials/projects/blog/404) follow the same layout order: header, then
   back-btn ("< index"), then the page's content box, with a 0.75rem gap
