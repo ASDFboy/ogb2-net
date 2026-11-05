@@ -601,6 +601,12 @@ body.crt-off{
   color:var(--brand);
 }
 
+.paper-byline{
+  margin:0.75rem 0 0;
+  font-size:0.95rem;
+  color:var(--text-dim);
+}
+
 .paper-question{
   margin:1rem 0 0;
   font-size:1.15rem;
