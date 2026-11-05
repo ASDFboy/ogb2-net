@@ -588,18 +588,18 @@ body.crt-off{
 }
 
 body.paper-page{
-  --paper:  #F3EEE4;
-  --card:   #E6DFD1;
-  --ink:    #211D1A;
-  --soft:   #5C534A;
-  --riso-pink: #A81F52;
-  --riso-blue: #2C52A0;
+  --paper:  #FBF8F2;
+  --card:   #EEE8DC;
+  --ink:    #110E0C;
+  --soft:   #3F3832;
+  --riso-pink: #8A1240;
+  --riso-blue: #183C85;
 
   --bg:            var(--paper);
   --surface:       var(--card);
   --surface-hover: var(--card);
-  --line:          rgba(33, 29, 26, 0.14);
-  --line-strong:   rgba(33, 29, 26, 0.28);
+  --line:          rgba(17, 14, 12, 0.2);
+  --line-strong:   rgba(17, 14, 12, 0.45);
   --text:          var(--ink);
   --text-dim:      var(--ink);
   --text-muted:    var(--soft);
@@ -631,7 +631,7 @@ body.paper-page ::selection{ background:var(--riso-pink); color:var(--paper); }
 
 .paper-byline{
   margin:0.75rem 0 0;
-  font-size:0.95rem;
+  font-size:1.05rem;
   color:var(--text-dim);
 }
 
@@ -642,7 +642,7 @@ body.paper-page ::selection{ background:var(--riso-pink); color:var(--paper); }
   color:var(--text);
 }
 
-.paper-thesis{ margin:2rem 0 0; font-size:1.05rem; }
+.paper-thesis{ margin:2rem 0 0; font-size:1.1rem; }
 .paper-thesis .comment{ margin-bottom:0.6rem; }
 
 .paper-h{
@@ -660,7 +660,7 @@ body.paper-page ::selection{ background:var(--riso-pink); color:var(--paper); }
 .paper-prose{
   margin-top:1.5rem;
   color:var(--text-dim);
-  font-size:1rem;
+  font-size:1.1rem;
   line-height:1.85;
 }
 
@@ -694,7 +694,7 @@ body.paper-page ::selection{ background:var(--riso-pink); color:var(--paper); }
 
 .paper-feature-text{
   color:var(--text-dim);
-  font-size:0.95rem;
+  font-size:1.05rem;
   line-height:1.8;
 }
 
@@ -743,7 +743,7 @@ body.paper-page ::selection{ background:var(--riso-pink); color:var(--paper); }
   top:50%;
   right:1.25rem;
   transform:translateY(-50%);
-  font-size:0.8rem;
+  font-size:0.875rem;
   color:var(--text-muted);
 }
 
@@ -788,12 +788,29 @@ body.paper-page ::selection{ background:var(--riso-pink); color:var(--paper); }
 
 .paper-todo p + p{ margin-top:0.3rem; }
 
+.paper-cite{
+  color:var(--riso-blue);
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+
+.paper-cite:hover,
+.paper-cite:focus-visible{ color:var(--riso-pink); }
+
+.paper-cited p[id]{ scroll-margin-top:3rem; }
+
+.paper-cited p:target{
+  outline:2px solid var(--riso-blue);
+  outline-offset:6px;
+}
+
 .paper-cited{
   margin-top:1.5rem;
   padding:2rem;
   background:var(--surface);
   color:var(--text-dim);
-  font-size:0.9rem;
+  font-size:0.95rem;
   line-height:1.8;
 }
 
@@ -818,7 +835,7 @@ body.paper-page ::selection{ background:var(--riso-pink); color:var(--paper); }
   margin:0.6rem 0 0;
   padding-left:1.2rem;
   color:var(--text-muted);
-  font-size:0.8rem;
+  font-size:0.875rem;
   line-height:1.8;
 }
 
