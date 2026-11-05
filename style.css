@@ -587,6 +587,34 @@ body.crt-off{
   100%{ transform:scaleY(0.02) scaleX(0); filter:brightness(1); opacity:0; }
 }
 
+body.paper-page{
+  --paper:  #F3EEE4;
+  --card:   #E6DFD1;
+  --ink:    #211D1A;
+  --soft:   #5C534A;
+  --riso-pink: #A81F52;
+  --riso-blue: #2C52A0;
+
+  --bg:            var(--paper);
+  --surface:       var(--card);
+  --surface-hover: var(--card);
+  --line:          rgba(33, 29, 26, 0.14);
+  --line-strong:   rgba(33, 29, 26, 0.28);
+  --text:          var(--ink);
+  --text-dim:      var(--ink);
+  --text-muted:    var(--soft);
+  --brand:         var(--riso-pink);
+  --green:         var(--riso-blue);
+  --cyan:          var(--riso-blue);
+  --orange:        var(--riso-pink);
+  --pink:          var(--riso-pink);
+  --purple:        var(--riso-blue);
+
+  color-scheme:light;
+}
+
+body.paper-page ::selection{ background:var(--riso-pink); color:var(--paper); }
+
 .paper-wrap{ max-width:1000px; }
 
 .paper{ margin:0; }
@@ -794,12 +822,12 @@ body.crt-off{
   line-height:1.8;
 }
 
-.paper-anime{      --accent:var(--pink); }
-.paper-games{      --accent:var(--green); }
-.paper-music{      --accent:var(--orange); }
-.paper-influence{  --accent:var(--cyan); }
-.paper-belonging{  --accent:var(--green); }
-.paper-otherside{  --accent:var(--pink); }
+.paper-anime{      --accent:var(--riso-pink); }
+.paper-games{      --accent:var(--riso-blue); }
+.paper-music{      --accent:var(--riso-pink); }
+.paper-influence{  --accent:var(--riso-blue); }
+.paper-belonging{  --accent:var(--riso-blue); }
+.paper-otherside{  --accent:var(--riso-pink); }
 
 @media (max-width:760px){
   .paper-section{ margin-top:4rem; }
