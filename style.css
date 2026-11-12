@@ -780,6 +780,28 @@ body.paper-page ::selection{ background:var(--riso-pink); color:var(--paper); }
 .paper-feature-text li + li{ margin-top:0.7rem; }
 .paper-feature-text li::marker{ color:var(--accent, var(--brand)); }
 
+.paper-video{
+  position:relative;
+  margin-top:1.25rem;
+  aspect-ratio:16 / 9;
+  background:var(--ink);
+}
+
+.paper-video iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.paper-video-tall{
+  max-width:360px;
+  aspect-ratio:auto;
+  height:640px;
+  background:var(--surface);
+}
+
 .paper-todo{
   margin-top:1.2rem;
   padding:0.9rem 1rem;
