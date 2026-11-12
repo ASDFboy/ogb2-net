@@ -798,7 +798,7 @@ body.paper-page ::selection{ background:var(--riso-pink); color:var(--paper); }
 .paper-video-tall{
   max-width:360px;
   aspect-ratio:auto;
-  height:640px;
+  height:680px;
   background:var(--surface);
 }
 
